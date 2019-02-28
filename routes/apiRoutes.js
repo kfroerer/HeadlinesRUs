@@ -13,9 +13,16 @@ app.get("/scrape", function ( request, response) {
             var article = {};
             article.title = $(element).find("h3").find("span").text();
             article.link = $(element).find("a").attr("href");
+            
+            if (!article.title || !article.link){
+                return console.log("Article not found");
+            }else{            
             results.push(article);
-            console.log(results);
+            console.log(results)
+            };
         })
+
+
         //need to validate and check for duplicates
         db.Article.insertMany(results)
         .then(function(docs) {
@@ -30,7 +37,7 @@ app.get("/scrape", function ( request, response) {
 
 //route for getting all the articles from db
 app.get("/articles", function (request, response ){ 
-    db.Article.find({})
+    db.Article.find({}).limit(30)
     .then(function(result){
         response.json(result);
     })

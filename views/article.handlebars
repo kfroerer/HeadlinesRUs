@@ -1,9 +1,16 @@
 <div class="container">
-  <div class="row">
+  <div class="jumbotron">
+  <h1 class="display-4" id="jumboTitle">Headlines R Us</h1>
+  <p class="lead">Scan the articles down below from CNN. Feel free to leave your comments!</p>
+  <hr class="my-4">
+  <p>Want the latest news?</p>
+  <a class="btn btn-primary btn-lg" href="#" role="button">Refresh News</a>
+</div>
+  <div class="container">
     <div class="col md-3" id="articles">
         {{#each article}}
-        <div class="card" style="width: 18rem;">
-          <div class="card-body">
+        <div class="card" style="width: 100%;">
+          <div class="card-body" id={{this._id}}>
             <h5 class="card-title">{{this.title}}</h5>
             <a href="http://www.cnn.com{{this.link}}" target="blank" class="card-link">Full Article</a>
             <div class="btn-group" role="group" aria-label="Basic example">

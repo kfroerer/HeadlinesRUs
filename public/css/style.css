@@ -1,0 +1,13 @@
+body {
+    background: slategray;
+}
+.jumbotron {
+    background-image: url("../images/newspapers-444447_1280.jpg");
+    background-position: center;
+    text-align: center;
+    
+}
+
+#jumboTitle {
+
+}
