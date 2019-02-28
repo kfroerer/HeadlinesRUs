@@ -1,24 +1,28 @@
 <div class="container">
   <div class="row">
-    <div class="col md-6">
+    <div class="col md-3" id="articles">
         {{#each article}}
         <div class="card" style="width: 18rem;">
           <div class="card-body">
             <h5 class="card-title">{{this.title}}</h5>
-            <a href={{this.link}} class="card-link">Full Article</a>
-            <a href="#" class="card-link">View Comments</a>
+            <a href="http://www.cnn.com{{this.link}}" target="blank" class="card-link">Full Article</a>
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button type="button" class="btn btn-secondary">View Comments</button>
+              <button type="button" class="btn btn-secondary">Leave a Comment</button>
+            </div>
           </div>
+        </div>
         {{/each}}
+    </div>
 </div>
 
-    </div>
+    
     <div class="col md-6">
         <div class="input-group">
           <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
             <div class="input-group-append" id="button-addon4">
              <button class="btn btn-outline-secondary" type="button">Submit</button>
-  </div>
-</div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
