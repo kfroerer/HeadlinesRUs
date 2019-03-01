@@ -9,7 +9,8 @@ var ArticleSchema = new Schema({
   },
   link: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
 
   // `comment` is an object that stores a Note id

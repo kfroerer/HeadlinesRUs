@@ -14,6 +14,7 @@ app.get("/scrape", function ( request, response) {
             article.title = $(element).find("h3").find("span").text();
             article.link = $(element).find("a").attr("href");
             
+            
             if (!article.title || !article.link){
                 return console.log("Article not found");
             }else{            
@@ -21,7 +22,7 @@ app.get("/scrape", function ( request, response) {
             console.log(results)
             };
         })
-
+        db.Article.find({})
 
         //need to validate and check for duplicates
         db.Article.insertMany(results)

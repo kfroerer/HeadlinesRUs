@@ -8,6 +8,6 @@ body {
     
 }
 
-#jumboTitle {
-
+.btn-group {
+    align-content: right
 }

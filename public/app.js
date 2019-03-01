@@ -7,3 +7,10 @@
 //     }
 
 //   });
+var db = require('../models');
+
+$('#deleteBtn').on("click", function(event) {
+    event.preventDefault();
+    db.Article.deleteMany({})
+    console.log("deleted")
+});
