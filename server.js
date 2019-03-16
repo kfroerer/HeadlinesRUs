@@ -10,7 +10,7 @@ app.set("view engine", "handlebars");
 
 var db = require("./models");
 
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
