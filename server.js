@@ -16,7 +16,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost/HeadlinesRUs", { useNewUrlParser: true });
+
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/HeadlinesRUs";
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 require("./routes/htmlRoutes")(app);
 require("./routes/apiRoutes")(app);
 //ROUTES
