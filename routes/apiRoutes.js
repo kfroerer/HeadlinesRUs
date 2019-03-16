@@ -73,5 +73,9 @@ app.post("/articles/:id", function(request, response) {
     });
 })
 
+app.delete("/atricles/:id", function(request, resposne) {
+    db.Article.deleteMany(request.body)
+    
+});
 
 };
